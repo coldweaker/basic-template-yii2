@@ -6,7 +6,12 @@ use yii\console\Controller;
 use yii\console\ExitCode;
 use app\models\activerecords\User;
 
-class FirstUserController extends Controller
+/**
+ * insert default user
+ *
+ * @author Hendi Andriansah <coldweaker@gmail.com>
+ */
+class InitUserController extends Controller
 {
     public $username;
     public $email;

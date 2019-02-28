@@ -6,7 +6,12 @@ use Yii;
 use yii\console\Controller;
 use yii\console\ExitCode;
 
-class FirstAuthController extends Controller
+/**
+ * insert basic permission and role
+ *
+ * @author Hendi Andriansah <coldweaker@gmail.com>
+ */
+class InitAuthController extends Controller
 {
     private $auth;
 
