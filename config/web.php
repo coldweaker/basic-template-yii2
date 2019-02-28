@@ -39,9 +39,9 @@ $config = [
             'useFileTransport' => false,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.mailtrap.io',
-                'username' => '3e4b6cb38b383e',
-                'password' => '2f60bbb498cec7',
+                'host' => '....',
+                'username' => '....',
+                'password' => '....',
                 'port' => '25',
                 'encryption' => 'tls',
             ],
@@ -60,16 +60,16 @@ $config = [
                 /*[
                     'class' => 'app\components\TelegramTarget',
                     'levels' => ['error'],
-                    'token' => '663019218:AAFUOKt-7tN3o4mnBUAhIWQb75ZT1NKzYNo',
-                    'chatId' => -229165359,
+                    'token' => '....',
+                    'chatId' => -0000,
                 ],*/
                 /*[
                     'class' => 'yii\log\EmailTarget',
                     'levels' => ['error'],
                     'message' => [
-                        'from' => ['log@hr.com'],
-                        'to' => ['coldweaker@gmail.com'],
-                        'subject' => 'Database error at hr.com'
+                        'from' => ['log@basic.com'],
+                        'to' => ['user@basic.com'],
+                        'subject' => 'Database error'
                     ],
                 ],*/
             ],

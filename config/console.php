@@ -44,8 +44,8 @@ $config = [
                     ],
                     'message' => [
                         'from' => ['log@basic.com'],
-                        'to' => ['coldweaker@gmail.com'],
-                        'subject' => 'Database error at basic'
+                        'to' => ['user@basic.com'],
+                        'subject' => 'Database error'
                     ],
                 ],
             ],

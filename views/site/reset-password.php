@@ -18,7 +18,7 @@ $fieldOptions1 = [
 
 <div class="login-box">
     <div class="login-logo">
-        <a href="#"><b>HR</b></a>
+        <a href="#"><b>Basic</b></a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">

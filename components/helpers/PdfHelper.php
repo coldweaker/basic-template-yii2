@@ -66,39 +66,4 @@ class PdfHelper
             exit;
         }
     }
-
-    /**
-     * this is example
-     * @return string footer
-     */
-    public static function defaultFooter()
-    {
-        return '<p style="font-size: 8pt;"><strong>'.
-                Yii::$app->params['company'].
-                '</strong><br>'.
-                Yii::$app->params['companyAddress'].
-                '</p>';
-    }
-
-    /**
-     * this is example
-     * Generate pdf only for training
-     */
-    public static function createTraining($training, $content, $list, $header)
-    {
-        $filename = "Training - {$training->title}";
-        $title = $subject = $training->title;
-        $mpdf = self::createInstance([
-            'setAutoTopMargin' => 'pad',
-            'setAutoBottomMargin' => 'pad'
-        ]);
-        $mpdf->SetTitle($title);
-        $mpdf->SetSubject($subject);
-        $mpdf->SetHTMLHeader($header);
-        $mpdf->SetHTMLFooter(self::defaultFooter());
-        $mpdf->WriteHTML($content);
-        $mpdf->addPage();
-        $mpdf->WriteHTML($list);
-        return $mpdf;
-    }
 }

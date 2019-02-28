@@ -6,8 +6,6 @@ use Yii;
 use app\models\ActiveRecord;
 use yii\web\IdentityInterface;
 use yii\helpers\ArrayHelper;
-use app\modules\master\models\activerecords\Employee;
-use app\modules\master\models\forms\EmployeeSettingForm;
 
 /**
  * User is the activerecord behind the user.

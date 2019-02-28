@@ -13,7 +13,7 @@ class UserHelper
 {
     /**
      * @param array $roles
-     * @return array data user with id and name/employee name
+     * @return array data user with id and username
      */
     public static function findAllByRoles(array $roles)
     {
@@ -50,9 +50,9 @@ class UserHelper
     public static function getNameById($userId)
     {
         $name = null;
-        $mUser = User::find()->with('employee')->where(['id' => $userId])->one();
+        $mUser = User::find()->where(['id' => $userId])->one();
         if ($mUser !== null) {
-            $name = ArrayHelper::getValue($mUser, 'employee.name', $mUser->username);
+            $name = $mUser->username;
         }
         return $name;
     }
