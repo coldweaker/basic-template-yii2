@@ -37,7 +37,7 @@ class InitUserController extends Controller
         $user->username = $this->username;
         $user->email = $this->email;
         $user->password_hash = \Yii::$app->security->generatePasswordHash($this->password);
-        if ($user->save(false)) {
+        if ($user->save()) {
             echo "insert user success\n";
         }
         return ExitCode::OK;
