@@ -18,6 +18,6 @@
 <ol>
     <li>Run command <code>composer update</code></li>
     <li>Create new database and then import DDL Query from <strong>your-project-name\data\init-db.sql</strong></li>
-    <li>Run yii command for init default user admin : <code>php yii init-user/index</code></li>
+    <li>Run yii command for init default user admin : <code>php yii init-user/index -u=username -p=password -e=email</code>. Set username, password and email</li>
     <li>Run yii command for init default auth for user admin: <code>php yii init-auth/index</code></li>
 </ol>
