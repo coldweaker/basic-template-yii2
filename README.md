@@ -24,8 +24,3 @@
     <li>Run yii command for init default auth for user admin: <code>php yii init-auth/index</code></li>
     <li>Run your project on web browser. If you got error like this <code>The file or directory to be published does not exist: path/vendor/almasaeed2010/adminlte/plugins/iCheck</code>, copy folder <strong>.github, bower_components, build, pages, plugins, documentation</strong> from https://github.com/almasaeed2010/AdminLTE to under folder <strong>path/vendor/almasaeed2010/adminlte</strong></li>
 </ol>
-
-<h4>Another Reference</h4>
-<ol>
-    <li>To remove git init on your project run this command <code>rm -rf .git*</code>. See https://stackoverflow.com/questions/4754152/how-do-i-remove-git-tracking-from-a-project/4754</li>
-</ol>
