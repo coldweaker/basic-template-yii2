@@ -2,7 +2,10 @@
 
 namespace app\models\searchs;
 
+use yii\helpers\Json;
+use yii\grid\GridView;
 use yii\data\SqlDataProvider;
+use yii\data\ArrayDataProvider;
 use app\models\activerecords\AuditTrail;
 
 /**
@@ -52,10 +55,6 @@ class AuditTrailSearch extends AuditTrail
                     strtotime($this->happened_date . ' 23:59:59')
                 ]);
             }
-
-            if (!empty($this->data)) {
-                $query->andFilterWhere(['like', 'data', $this->data]);
-            }
         }
 
         $cmd = $query->createCommand();
@@ -83,5 +82,26 @@ class AuditTrailSearch extends AuditTrail
         ]);
 
         return $dataProvider;
+    }
+
+    /**
+     *
+     */
+    public function renderDataValue($data)
+    {
+        $arrData = Json::decode($data);
+        if (is_array($arrData)) {
+            $dataProvider = new ArrayDataProvider([
+                'allModels' => $arrData
+            ]);
+            return GridView::widget([
+                'dataProvider' => $dataProvider,
+                'showOnEmpty' => false,
+                'options' => ['class' => 'table-responsive no-padding'],
+                'tableOptions' => ['class' => 'table table-hover table-bordered'],
+                'layout' => "<div class='box-body'>{items}</div>",
+                'columns' => ['attr', 'from', 'to'],
+            ]);
+        }
     }
 }

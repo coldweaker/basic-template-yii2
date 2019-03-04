@@ -34,6 +34,12 @@ $this->params['side-right'] = [
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'renderExtendRowContent' => function($data) use ($searchModel) {
+            return $searchModel->renderDataValue($data['data']);
+        },
+        'rowOptions' => function($model, $key, $index, $grid) {
+            return ['class' => 'row-parent'];
+        },
         'columns' => [
             [
                 'attribute' => 'model_type',
@@ -68,3 +74,22 @@ $this->params['side-right'] = [
     <?php Pjax::end(); ?>
 </div>
 <!-- /.box -->
+<?php
+$script = <<< JS
+$(function() {
+    toggleExtendRow();
+    function toggleExtendRow() {
+        $(".extend-row").hide();
+        $(".row-parent").click(function() {
+            var key = $(this).data("key");
+            console.log(key);
+            $("#extend-"+key).toggle();
+        });
+    }
+
+    $(document).on('pjax:complete', function () {
+        toggleExtendRow();
+    });
+});
+JS;
+$this->registerJs($script, \app\components\View::POS_READY);
