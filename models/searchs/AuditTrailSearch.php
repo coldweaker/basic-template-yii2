@@ -36,8 +36,7 @@ class AuditTrailSearch extends AuditTrail
         $query = (new \yii\db\Query())
                 ->select(['t.*', 'u.username'])
                 ->from(['t' => self::tableName()])
-                ->innerJoin(['u' => UserSearch::tableName()], 'u.id = t.user_id')
-                ->orderBy(['t.happened_at' => SORT_DESC]);
+                ->innerJoin(['u' => UserSearch::tableName()], 'u.id = t.user_id');
 
         if ($this->load($params) && $this->validate()) {
             $query->andFilterWhere(['like', 'model_type', $this->model_type])

@@ -46,8 +46,7 @@ class DocumentSearch extends Document
     {
         $query = (new \yii\db\Query())
             ->select(['id', 'name'])
-            ->from(self::tableName())
-            ->orderBy(['created_at' => SORT_DESC]);
+            ->from(self::tableName());
 
         if ($this->load($params) && $this->validate()) {
             $query->andFilterWhere(['id' => $this->id])

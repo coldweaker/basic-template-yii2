@@ -47,8 +47,7 @@ class NotificationSearch extends Notification
     {
         $query = (new \yii\db\Query())
             ->select(['id', 'from_name', 'to_name', 'status', 'title'])
-            ->from('{{notification}}')
-            ->orderBy(['id' => SORT_DESC]);
+            ->from('{{notification}}');
         $query->andWhere(['to' => Yii::$app->user->id]);
 
         if ($this->load($params) && $this->validate()) {
